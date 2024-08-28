@@ -56,8 +56,8 @@ func main() {
 			return
 		}
 		sp := strings.Split(string(output), "\n")
-		for i := 0; i < len(sp); i++ {
-			spTrim := strings.TrimSpace(sp[i])
+		for _, spi := range sp {
+			spTrim := strings.TrimSpace(spi)
 			if strings.Contains(spTrim, *device) {
 				rx, tx := calculate(strings.Split(spTrim, ":")[1])
 				if rx == nil || tx == nil {
